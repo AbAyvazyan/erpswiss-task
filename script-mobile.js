@@ -2,11 +2,19 @@ const categoryMobileButtons = document.querySelectorAll('.category-btn-mobile')
 
 const mobileCategoryButtonClickHandler = (item, buttons, layer = 1) => {
     item.addEventListener('click', function () {
+
+        const dataSub = this.getAttribute('data-sub')
+        let parsedData = JSON.parse(dataSub.replace(/'/g, '"'));
+
+        if (!parsedData.length) {
+            return
+        }
+
         if (item.hasAttribute('clicked')) {
             item.nextElementSibling.remove()
-            item.style.backgroundColor=layer===1?'#F2F2F3':'transparent'
-            item.style.color='#010114'
-            item.querySelector('img').src='images/Expand_down_light.png'
+            item.style.backgroundColor = layer === 1 ? '#F2F2F3' : 'transparent'
+            item.style.color = '#010114'
+            item.querySelector('img').src = 'images/Expand_down_light.png'
             item.querySelector('img').removeAttribute('class')
             item.removeAttribute('clicked')
             return
@@ -17,25 +25,16 @@ const mobileCategoryButtonClickHandler = (item, buttons, layer = 1) => {
             children[i].className = ''
         }
 
-        const dataSub = this.getAttribute('data-sub')
-        let parsedData = JSON.parse(dataSub.replace(/'/g, '"'));
-
-        if (!parsedData.length) {
-            return
-        }
-
-        console.log(parsedData)
-
 
         const newCategories = document.createElement('div')
         newCategories.className = 'sub-category-block-mobile'
-        if(layer!==1){
-            newCategories.style.border='none'
-            newCategories.style.backgroundColor='#F2F2F3'
+        if (layer !== 1) {
+            newCategories.style.border = 'none'
+            newCategories.style.backgroundColor = '#F2F2F3'
         }
         newCategories.style.minHeight = 'max-content'
         const newUl = document.createElement('ul')
-        newUl.className = layer===1?'sub-active-mobile':'sub-passive-mobile'
+        newUl.className = layer === 1 ? 'sub-active-mobile' : 'sub-passive-mobile'
 
         parsedData.forEach(data => {
             const dataName = data.name ? data.name : Object.keys(data)[0]
@@ -43,12 +42,11 @@ const mobileCategoryButtonClickHandler = (item, buttons, layer = 1) => {
             newLi.setAttribute('data-name', dataName)
             newLi.setAttribute('data-sub', JSON.stringify(data.name ? [] : data[dataName]))
             newLi.innerHTML = `<span>${dataName}</span>${!data.name ? '<img src="images/Expand_down_light.png" alt="down-light">' : ''}`
-            if(layer===3){
-                newLi.style.fontWeight='400'
+            if (layer === 3) {
+                newLi.style.fontWeight = '400'
             }
             newUl.appendChild(newLi)
         })
-
 
 
         newCategories.appendChild(newUl)
@@ -56,7 +54,7 @@ const mobileCategoryButtonClickHandler = (item, buttons, layer = 1) => {
             item.style.backgroundColor = '#010114'
             item.style.color = '#ffffff'
             item.querySelector('img').src = 'images/Expand_down_light-white.png'
-        }else{
+        } else {
             item.style.backgroundColor = '#F2F2F3'
             item.querySelector('img').classList.add('rotated-image')
 
@@ -72,6 +70,24 @@ const mobileCategoryButtonClickHandler = (item, buttons, layer = 1) => {
 
     })
 }
+
+
+const menuButton = document.getElementById('menu-button')
+const menuMobile = document.getElementById('menu-mobile')
+const closeButton = document.getElementById('close-button')
+
+const onModalOpenHandler = () => {
+    menuMobile.style.display = 'block'
+    document.body.style.overflow = 'hidden'
+}
+
+const onModalCloseHandler = () => {
+    menuMobile.style.display = 'none'
+    document.body.style.overflow = 'unset'
+}
+
+menuButton.addEventListener('click', onModalOpenHandler)
+closeButton.addEventListener('click', onModalCloseHandler)
 
 
 categoryMobileButtons.forEach(item => mobileCategoryButtonClickHandler(item, categoryMobileButtons, 1))

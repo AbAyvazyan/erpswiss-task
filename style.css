@@ -137,7 +137,7 @@ main h1 {
 }
 
 .main-category-block li {
-    width:100%;
+    width: 100%;
     font-family: Poppins, serif;
     font-size: 20px;
     font-weight: 600;
@@ -172,18 +172,18 @@ main h1 {
 }
 
 /*mobile li*/
-.main-category-block-mobile{
+.main-category-block-mobile {
     width: 100%;
-    padding: 0 30px;
-    display: none!important;
+    padding: 0 24px;
+    display: none !important;
 }
 
-.active-mobile{
+.active-mobile {
     width: 100%;
     padding: 0;
 }
 
-.category-btn-mobile{
+.category-btn-mobile {
     width: 100%;
     min-height: 54px;
     display: flex;
@@ -202,23 +202,23 @@ main h1 {
     cursor: pointer;
 }
 
-.rotated-image{
+.rotated-image {
     transform: rotate(180deg);
     transition: transform 0.5s;
 }
 
-.sub-category-block-mobile{
+.sub-category-block-mobile {
     width: 100%;
-    border: 1px solid #010114 ;
+    border: 1px solid #010114;
     margin: -24px 0 24px;
 }
 
-.sub-active-mobile{
+.sub-active-mobile {
     list-style: none;
-    padding: 0 0 10px ;
+    padding: 0 0 10px;
 }
 
-.sub-active-mobile li{
+.sub-active-mobile li {
     margin: 8px 0;
     font-family: Poppins, serif;
     font-size: 16px;
@@ -233,14 +233,102 @@ main h1 {
     align-items: center;
 }
 
-.sub-active-mobile li:first-child{
+.sub-active-mobile li:first-child {
     margin-top: 0;
 }
 
-.sub-passive-mobile{
+.sub-passive-mobile {
     list-style: none;
     padding: 10px 0;
 
+}
+
+/*mobile navbar*/
+
+.mobile-navbar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-navbar img {
+    cursor: pointer;
+}
+
+.book-btn {
+    width: 120px;
+    height: 54px;
+    border: 1px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins, serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.menu-mobile {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.burger-menu {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 7;
+    margin: 0;
+    background-color: #fff;
+    list-style: none;
+    padding-top: 70px;
+    transition: 1s;
+    animation-name: menu;
+    animation-duration: 1s;
+}
+
+.burger-menu li {
+    width: 100%;
+    height: 54px;
+    line-height: 44px;
+    font-family: Poppins, serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    color: #010114;
+    cursor: pointer;
+    background-color: #F1F1F1;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.burger-menu li:hover, .burger-menu li:active {
+    background-color: #d1d1d1;
+}
+
+#close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+@keyframes menu {
+    from {
+        margin-left: -80%;
+    }
+    to {
+        margin-left: 0;
+    }
 }
 
 
@@ -257,67 +345,90 @@ main h1 {
 }
 
 @media only screen and (max-width: 1020px) {
-    .search-part{
+    .search-part {
         padding: 0 100px;
     }
 
-    main{
+    main {
         padding: 0 100px;
     }
 
-    .navbar{
+    .navbar {
         padding: 0 100px;
     }
 }
 
 @media only screen and (max-width: 900px) {
-    .search-part{
+    .search-part {
         padding: 0 50px;
     }
 
-    main{
+    main {
         padding: 0 50px;
     }
 
-    .navbar{
+    .navbar {
         padding: 0 50px;
     }
 }
 
 @media only screen and (max-width: 800px) {
-    .search-part{
+    .search-part {
         padding: 0 10px;
     }
 
-    main{
+    main {
         padding: 0 10px;
     }
 
-    .navbar{
+    .navbar {
         padding: 0 10px;
     }
 
-    .content > div{
+    .content > div {
         gap: 5px;
     }
 
-    .menu{
+    .menu {
         gap: 8px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    #main-categories-holder{
+    #main-categories-holder {
         display: none;
     }
 
-    .main-category-block-mobile{
-        display: block!important;
+    .main-category-block-mobile {
+        display: block !important;
+    }
+
+    header {
+        height: 93px;
+        background-color: #010114;
+        padding: 20px 24px;
+        position: relative;
+    }
+
+    .search-part {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    h1 {
+        padding: 0 24px;
+    }
+
+    .mobile-navbar {
+        display: flex;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    .main-category-block-mobile{
+    .main-category-block-mobile {
         padding: 0;
     }
 }

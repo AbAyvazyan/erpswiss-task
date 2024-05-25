@@ -5,6 +5,7 @@ const categoryButtonClickHandler = (item, layer = 1, buttons) => {
     const mainCategoriesHolder = document.getElementById('main-categories-holder')
     mainCategoriesHolder.style.background = '#FFFFFF'
     item.addEventListener('click', function () {
+
         const children = mainCategoriesHolder.children;
         for (let i = 0; i < children.length; i++) {
             children[i].style.background = '#FFFFFF';
