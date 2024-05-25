@@ -291,9 +291,9 @@ main h1 {
     background-color: #fff;
     list-style: none;
     padding-top: 70px;
-    transition: 1s;
+    transition: 0.5s;
     animation-name: menu;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 
 .burger-menu li {
