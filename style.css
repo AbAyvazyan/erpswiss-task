@@ -171,6 +171,91 @@ main h1 {
     color: #010114;
 }
 
+/*mobile li*/
+.main-category-block-mobile{
+    width: 100%;
+    padding: 0 30px;
+    display: none!important;
+}
+
+.active-mobile{
+    width: 100%;
+    padding: 0;
+}
+
+.category-btn-mobile{
+    width: 100%;
+    min-height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    list-style-type: none;
+    background-color: #F2F2F3;
+    margin-bottom: 24px;
+    font-family: Poppins, serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: #010114;
+    cursor: pointer;
+}
+
+.rotated-image{
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+}
+
+.sub-category-block-mobile{
+    width: 100%;
+    border: 1px solid #010114 ;
+    margin: -24px 0 24px;
+}
+
+.sub-active-mobile{
+    list-style: none;
+    padding: 0 0 10px ;
+}
+
+.sub-active-mobile li{
+    margin: 8px 0;
+    font-family: Poppins, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 12px 24px;
+    text-align: left;
+    color: #010114;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-active-mobile li:first-child{
+    margin-top: 0;
+}
+
+.sub-passive-mobile{
+    list-style: none;
+    padding: 10px 0;
+
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .main-category-block li {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    .main-category-block li {
+        margin-bottom: 30px;
+    }
+}
+
 @media only screen and (max-width: 1020px) {
     .search-part{
         padding: 0 100px;
@@ -218,5 +303,21 @@ main h1 {
 
     .menu{
         gap: 8px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #main-categories-holder{
+        display: none;
+    }
+
+    .main-category-block-mobile{
+        display: block!important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .main-category-block-mobile{
+        padding: 0;
     }
 }

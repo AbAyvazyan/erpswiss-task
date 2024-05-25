@@ -14,7 +14,6 @@ const categoryButtonClickHandler = (item, layer = 1, buttons) => {
         }
 
         buttons.forEach(btn => {
-            console.log(btn.innerHTML)
             btn.innerHTML = btn.innerHTML.split('<')[0];
             btn.style.color = '#b3b3b9';
             btn.classList.remove('clickedLi');
