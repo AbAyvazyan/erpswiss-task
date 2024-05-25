@@ -408,6 +408,7 @@ main h1 {
         background-color: #010114;
         padding: 20px 24px;
         position: relative;
+        margin-bottom: 24px;
     }
 
     .search-part {
